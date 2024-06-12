@@ -3,7 +3,6 @@ import NextTopLoader from "nextjs-toploader";
 
 import Providers from "@/components/layout/providers";
 import { Toaster } from "@/components/ui/toaster";
-import { auth } from "@/lib/auth";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -20,12 +19,12 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const session = await auth();
+  // const session = await auth();
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.className} overflow-hidden`}>
         <NextTopLoader />
-        <Providers session={session}>
+        <Providers>
           <Toaster />
           {children}
         </Providers>
