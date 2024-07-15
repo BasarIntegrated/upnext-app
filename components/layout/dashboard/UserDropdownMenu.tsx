@@ -11,10 +11,11 @@ import {
   DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { signOut, useSession } from "next-auth/react";
+import { signOut } from "next-auth/react";
 
 export function UserDropdownMenu() {
-  const { data: session } = useSession();
+  // const { data: session } = useSession();
+  const session = null;
   if (session) {
     return (
       <DropdownMenu>
